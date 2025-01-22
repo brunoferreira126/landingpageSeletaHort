@@ -1,0 +1,1068 @@
+/* Estilo global */
+:root {
+    --green-dark: #004B26;
+    --green-light: #00B217;
+    --orange: #FF4D00;
+    --white: #FFFFFF;
+    --font-family: 'Arial', sans-serif;
+}
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5; /* Cor de fundo suave */
+    color: var(--green-dark);
+}
+
+
+/* Botões destacados */
+.cta-button {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px; /* Botão mais arredondado */
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background: var(--green-light);
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Navbar geral */
+.navbar {
+    text-align: center;
+    display: flex;
+    justify-content:space-around; /* Espaçamento uniforme entre os itens */
+    align-items: center;
+    background: var(--green-dark);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo principal */
+.navbar .logo img {
+    width: 120px; /* Tamanho padrão */
+
+    transition: width 0.3s ease; /* Transição suave para alterações */
+    
+}
+
+/* Menu principal */
+.nav-links {
+    list-style: none;
+    display: flex; /* Exibe os links lado a lado */
+    align-items: center;
+    gap: 2rem; /* Espaço entre os links */
+}
+
+/* Links de navegação */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF4D00; /* Muda a cor ao passar o mouse */
+}
+
+/* Menu hambúrguer (oculto em telas grandes) */
+.hamburger {
+    display: none; /* Esconde o menu em telas grandes */
+    flex-direction: column;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Quando o menu hambúrguer está ativo */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.floating-whatsapp{
+    display: none;
+
+}
+
+/* Estilo das seções */
+
+
+
+section {
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Títulos */
+section h2 {
+    color: var(--green-dark);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Textos */
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Estilo da seção Quem Somos */
+.hero-quem-somos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 4rem 2rem;
+    gap: 2rem;
+    position: relative;
+    color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-quem-somos::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 75, 38, 0.7); /* Overlay escuro */
+    z-index: 1;
+}
+
+.hero-quem-somos > * {
+    position: relative;
+    z-index: 2; /* Eleva conteúdo acima do overlay */
+}
+
+.hero-quem-somos .selo img {
+    max-width: 550px; /* Tamanho ajustado */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-quem-somos .content {
+    max-width: 700px;
+}
+
+.hero-quem-somos h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-quem-somos p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-quem-somos .cta-button {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-quem-somos .cta-button:hover {
+    background: var(--green-light);
+    transform: scale(1.05);
+}
+
+
+/* Estilo da seção O Que Fazemos */
+.o-que-fazemos {
+    text-align: center;
+    margin: auto;
+    max-width: 1200px;
+    padding: 4rem 2rem;
+}
+
+.o-que-fazemos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.o-que-fazemos ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f9f9f9; /* Fundo claro */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 280px; /* Limite de largura */
+    flex: 1 1 280px; /* Flexível e responsivo */
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.o-que-fazemos ul li:hover {
+    transform: translateY(-5px); /* Eleva o cartão ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.o-que-fazemos ul li i {
+    font-size: 2rem;
+    color: var(--green-light);
+}
+
+.o-que-fazemos ul li span {
+    font-size: 1.1rem;
+    color: var(--green-dark);
+}
+
+.o-que-fazemos img {
+    max-width: 90%;
+    margin: 2rem auto 0;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagem centralizada */
+.o-que-fazemos img {
+    max-width: 90%;
+    margin: 2rem auto 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Estilo da seção Nossos Produtos */
+.nossos-produtos {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white); /* Fundo branco */
+    position: relative;
+    color: var(--green-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título da lista de produtos */
+.nossos-produtos .product-list-title {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: var(--white);
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Seção Nossos Produtos */
+
+.nossos-produtos h2 {
+    color: var(--green-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.nossos-produtos .intro-text {
+    font-size: 1.2rem;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    color: var(--green-dark);
+}
+
+/* Estilo das Categorias */
+.nossos-produtos .categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nossos-produtos .categoria {
+    background: var(--green-dark); /* Fundo verde escuro */
+    color: var(--white); /* Texto branco */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 280px; /* Responsividade */
+    max-width: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nossos-produtos .categoria:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nossos-produtos .categoria img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nossos-produtos .categoria h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.nossos-produtos .categoria p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.nossos-produtos .categoria .product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.nossos-produtos .categoria .product-list li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--white);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.nossos-produtos .categoria .product-list li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: var(--green-light);
+    font-size: 1rem;
+}
+
+/* Botão de chamada para ação */
+.nossos-produtos .cta-button {
+    margin-top: 2rem;
+    background: var(--orange);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nossos-produtos .cta-button:hover {
+    background: var(--green-light);
+    transform: scale(1.05);
+}
+
+
+/* Melhorando a aparência da lista */
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 500px;
+    margin: 1rem auto;
+    border: 1px solid var(--green-light);
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-list li {
+    padding: 0.8rem 1rem;
+    
+    font-size: 1rem;
+    color: var(--green-dark);
+}
+
+.product-list li:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+/* Estilo para os botões das abas */
+.tab-btn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--green-dark);
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: var(--green-light);
+    transform: scale(1.05);
+}
+
+/* Painéis ocultos inicialmente */
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+
+/* Descrição acima das abas */
+.tabs-description {
+
+        font-size: 1.2rem;
+        margin-top: 1.5rem; /* Espaçamento acima */
+        margin-bottom: 3rem; /* Aumenta o espaço abaixo */
+        text-align: center;
+        color: var(--green-dark);
+    }
+    
+
+.tab-btn.active {
+    background: var(--green-light);
+    transform: scale(1.05);
+    color: var(--white);
+}
+
+/* Seção Equipe */
+
+.nossa-equipe-horta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+    color: var(--green-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+
+.nossa-equipe-horta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--green-dark);
+}
+
+
+.nossa-equipe-horta .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0 auto 2rem;
+    max-width: 700px;
+    text-align: center;
+}
+
+.equipe-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.equipe-item {
+  background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    
+}
+
+.equipe-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.equipe-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Define uma proporção fixa */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço definido */
+    display: block;
+    border-bottom: 4px solid var(--orange);
+}
+
+.equipe-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.equipe-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0; /* Remove o espaçamento extra */
+    color:  #004B26;
+    text-align: center;
+}
+
+
+.equipe-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color:  #004B26;
+    margin: 0; /* Remove margens desnecessárias */
+    text-align: center; /* Centraliza horizontalmente */
+}
+
+
+/* Seção Final */
+.final-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #eaeaea; /* Cor neutra e sofisticada */
+    color: var(--green-dark); /* Texto em verde escuro para contraste */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.logo-image {
+    max-width: 350px; /* Aumenta o tamanho da logo */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.character-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.character-image {
+    max-width: 650px; /* Aumenta o tamanho da imagem do personagem */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px; /* Bordas suaves */
+}
+
+.final-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--green-dark); /* Texto em verde escuro */
+}
+
+
+
+/* Seção de Contato */
+.contato {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+    color: var(--green-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.contato h2 {
+    color: var(--green-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--green-light);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.contato .intro-text {
+    font-size: 1.2rem;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    color: var(--green-dark);
+    max-width: 600px;
+    text-align: center;
+}
+
+.contato-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.contato-buttons .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contato-buttons .cta-button.whatsapp {
+    background-color: #25D366; /* Verde do WhatsApp */
+}
+
+.contato-buttons .cta-button.whatsapp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05);
+}
+
+.contato-buttons .cta-button.instagram {
+    background: radial-gradient(circle at 30% 30%, #F58529, #DD2A7B, #8134AF, #515BD4); /* Gradiente do Instagram */
+}
+
+.contato-buttons .cta-button.instagram:hover {
+    transform: scale(1.05);
+}
+
+.contato-buttons .cta-button i {
+    font-size: 1.5rem;
+}
+
+
+/* Rodapé */
+.footer {
+    background: var(--green-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 4px solid var(--orange);
+}
+
+.footer .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.footer .footer-link {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer .footer-link:hover {
+    color: var(--green-light);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Responsividade */
+
+
+@media (max-width: 768px) {
+
+   
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Espaça os itens nas extremidades */
+            align-items: center;
+            padding: 0.5rem 1rem; /* Ajusta o espaçamento */
+        }
+    
+        .hamburger {
+            display: flex; /* Exibe o menu hambúrguer */
+            order: 1; /* Coloca o botão hambúrguer na primeira posição */
+        }
+    
+        .navbar .logo {
+            order: 2; /* Coloca a logo no centro */
+            flex: 1; /* Permite que a logo ocupe o espaço central */
+           
+           
+        }
+    
+        .navbar .logo img {
+            width: 150px; /* Ajusta o tamanho da logo */
+            margin-right: 50px;
+           
+        }
+    
+      
+    
+        /* Ajusta o menu dropdown em telas pequenas */
+        .nav-links {
+            display: none; /* Esconde os links por padrão */
+        }
+    
+        .nav-links.active {
+            display: flex;
+            flex-direction: column; /* Exibe os links em coluna */
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: var(--green-dark);
+            width: 200px;
+            height: 100%;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
+
+        .cta-button{
+            display: none;
+        }
+    
+   
+    /* Ajusta o ícone do hambúrguer para menor tamanho */
+    .hamburger span {
+        width: 20px; /* Reduz a largura do ícone */
+        height: 2px; /* Reduz a altura do ícone */
+    }
+
+    
+    .hero-quem-somos {
+        flex-direction: column; /* Organiza os elementos verticalmente */
+        
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-quem-somos p{
+        font-size: 15px;
+    }
+    .hero-quem-somos .content {
+        max-width: 100%;
+    }
+
+    .hero-quem-somos .selo img {
+        max-width: 400px; /* Reduz o tamanho da imagem */
+        margin-top: 50px;
+    }
+
+
+
+
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        background-color: #25D366; /* Cor do WhatsApp */
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .floating-whatsapp:hover {
+        transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .floating-whatsapp i {
+        color: #fff;
+        font-size: 24px; /* Tamanho do ícone */
+    }
+
+
+    
+    .o-que-fazemos ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .o-que-fazemos ul li {
+        max-width: 100%;
+    }
+
+    .nossos-produtos {
+        padding: 3rem 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nossos-produtos h2 {
+        font-size: 2rem;
+    }
+
+    .categorias {
+        flex-direction: column; /* Organiza as categorias verticalmente */
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+ 
+    /* Euquipe */
+    .equipe-galeria {
+        flex-direction: column; /* Organiza as categorias verticalmente */
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+
+
+
+    /* Contato */
+    
+        .contato {
+            display: flex;
+            flex-direction: column; /* Coloca os elementos em coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+    
+        .contato-buttons {
+            display: flex;
+            text-align: center;
+            flex-direction: column; /* Empilha os botões verticalmente */
+            align-items: center; /* Centraliza os botões */
+            gap: 1rem; /* Espaço entre os botões */
+        }
+    
+        .contato-buttons .cta-button {
+            font-size: 1rem; /* Ajusta o tamanho do texto */
+            padding: 0.8rem 2.3rem; /* Ajusta o padding */
+            width: 250px; /* Deixa a largura dinâmica */
+            text-align: center; /* Centraliza o texto horizontalmente */
+            display: flex; /* Torna o botão um flex container */
+            justify-content: center; /* Centraliza o texto horizontalmente */
+            align-items: center; /* Centraliza o texto verticalmente */
+        }
+    
+    } 
+
+    /* Telas menores que 480px (Smartphones pequenos) */
+    @media (max-width: 480px) {
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Espaça os itens nas extremidades */
+            align-items: center;
+            padding: 0.5rem 1rem; /* Ajusta o espaçamento */
+        }
+    
+        .hamburger {
+            display: flex; /* Exibe o menu hambúrguer */
+            order: 1; /* Coloca o botão hambúrguer na primeira posição */
+        }
+    
+        .navbar .logo {
+            order: 2; /* Coloca a logo no centro */
+            flex: 1; /* Permite que a logo ocupe o espaço central */
+            text-align: center; /* Centraliza a logo horizontalmente */
+        }
+    
+        .navbar .logo img {
+            width: 80px; /* Reduz o tamanho da logo */
+        }
+    
+        .cta-button {
+            display: none; /* Esconde o botão principal */
+        }
+    
+        /* Menu dropdown em telas pequenas */
+        .nav-links {
+            display: none; /* Esconde os links por padrão */
+        }
+    
+        .nav-links.active {
+            display: flex;
+            flex-direction: column; /* Exibe os links em coluna */
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: var(--green-dark);
+            width: 200px;
+            height: 100%;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
+    
+        /* Ícone do WhatsApp flutuante */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            width: 45px; /* Menor para telas pequenas */
+            height: 45px;
+            background-color: #25D366; /* Cor do WhatsApp */
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .floating-whatsapp:hover {
+            transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+    
+        .floating-whatsapp i {
+            color: #fff;
+            font-size: 20px; /* Menor tamanho do ícone */
+        }
+    
+        /* Hero Section */
+        .hero-quem-somos {
+            flex-direction: column; /* Organiza os elementos verticalmente */
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+    
+        .hero-quem-somos .content {
+            max-width: 100%;
+        }
+    
+        .hero-quem-somos .selo img {
+            max-width: 300px; /* Reduz o tamanho da imagem */
+            margin-top: 1rem;
+        }
+    
+        /* Seção "O Que Fazemos" */
+        .o-que-fazemos ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    
+        .o-que-fazemos ul li {
+            max-width: 100%;
+        }
+    
+        /* Seção "Nossos Produtos" */
+        .nossos-produtos {
+            padding: 2rem 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .nossos-produtos h2 {
+            font-size: 1.8rem; /* Reduz o tamanho do título */
+        }
+    
+        .categorias {
+            flex-direction: column; /* Organiza as categorias verticalmente */
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+    
+        /* Seção de Contato */
+        .contato {
+            display: flex;
+            flex-direction: column; /* Coloca os elementos em coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+    
+        .contato-buttons {
+            display: flex;
+            flex-direction: column; /* Empilha os botões verticalmente */
+            align-items: center; /* Centraliza os botões */
+            gap: 1rem; /* Espaço entre os botões */
+        }
+    
+        .contato-buttons .cta-button {
+            font-size: 0.9rem; /* Ajusta o tamanho do texto */
+            padding: 0.8rem 2rem; /* Ajusta o padding */
+            width: 200px; /* Ajusta a largura */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        /* Rodapé */
+        .footer {
+            font-size: 0.8rem; /* Ajusta o tamanho do texto do rodapé */
+        }
+    }
+    
