@@ -303,6 +303,7 @@ section p {
 }
 
 
+
 /* Título da lista de produtos */
 .nossos-produtos .product-list-title {
     font-size: 1.8rem;
@@ -398,6 +399,60 @@ section p {
     color: var(--green-light);
     font-size: 1rem;
 }
+/* carrossel de produtos */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: var(--green-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de navegação */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
 
 /* Botão de chamada para ação */
 .nossos-produtos .cta-button {
@@ -443,6 +498,7 @@ section p {
 .product-list li:last-child {
     border-bottom: none; /* Remove a borda do último item */
 }
+
 
 /* Estilo para os botões das abas */
 .tab-btn {

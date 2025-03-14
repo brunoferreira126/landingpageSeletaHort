@@ -37,3 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
         once: true, // Executa apenas uma vez
     });
 });
+
+ // carrossel de produtos
+ document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".carousel");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevBtn = document.querySelector(".carousel-prev");
+    const nextBtn = document.querySelector(".carousel-next");
+    let index = 0;
+    let interval;
+
+    function startCarousel() {
+        interval = setInterval(() => {
+            index = (index + 1) % slides.length;
+            updateCarousel();
+        }, 3000);
+    }
+
+    function updateCarousel() {
+        const offset = -index * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+        clearInterval(interval);
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+        startCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        clearInterval(interval);
+        index = (index + 1) % slides.length;
+        updateCarousel();
+        startCarousel();
+    });
+
+    startCarousel();
+});
